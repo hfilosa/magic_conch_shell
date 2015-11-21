@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>THE ANSWER!!!</title>
+  </head>
+
+  <body>
+    
+    <h1>THE MAGIC CONCH SHELL Says {{answer}} is the answer to {{question}}</h1>
+    <br>
+    <form action="/question" method="get">
+      <input type="text" name="question">
+      <input type="submit" name="Ask" value="Submit">
+    </form>
+    
+  </body>
+</html>

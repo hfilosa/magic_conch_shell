@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>THE MAGIC CONCH SHELL!!!</title>
+  </head>
+
+  <body>
+    {% if first %}
+    <h1>THE MAGIC CONCH SHELL KNOWS ALL!!!</h1>
+    <br>
+    <h2>What is it you wish to know?</h2>
+    
+    {% else %}
+    <h1>THE MAGIC CONCH SHELL Says {{answer}} is the answer to "{{question}}"</h1>
+    <br>
+    <h2>Ask the Magic Conch another question</h2>
+    {% endif %}
+    
+    <form action="/question" method="get">
+      <input type="text" name="question">
+      <input type="submit" name="Ask" value="Submit">
+    </form>
+    
+  </body>
+</html>
