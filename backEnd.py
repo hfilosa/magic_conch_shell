@@ -22,11 +22,15 @@ def get_page(link):
     
     :retval: string of page contents
     """
-    url = urllib2.urlopen(link)
-    page = url.read()
-    soup = bs4.BeautifulSoup(page,'html')
-    raw = soup.get_text()
-    return raw
+    print link
+    try:
+        url = urllib2.urlopen(link)
+        page = url.read()
+        soup = bs4.BeautifulSoup(page,'html')
+        raw = soup.get_text()
+        return raw
+    except:
+        return "error"
 
 def search_page(text,query):
     """
@@ -41,9 +45,9 @@ def search_page(text,query):
     if re.search("(W|w)ho",query):
         exp = "[A-Z][a-z]+ [A-Z][a-z]+"
     elif re.search("(W|w)hen",query):
-        exp="A regex for dates"
+        exp= "([0-9]{1,4}/[0-9]{1,4}/[0-9]{1,4})|([A-Z][a-z]+ [0-9]{0,2}, [0-9]{0,4})"
     elif re.search("(W|w)here",query):
-        exp="A regex for places"
+        exp= "(T|t)he [A-Z][a-z]+ ?([A-Z][a-z]+ )+"
     else:
         raise SystemExit(0)
     result = re.finditer(exp,text)
@@ -87,7 +91,11 @@ def find_answer(query):
                 master_results[name]+=1;
             else:
                 master_results[name]=1;
+        print master_results
     return find_max(master_results)
 
-print find_answer("Who invented the lightbulb?")
-
+#print find_answer("Who invented the lightbulb?")
+#print find_answer("Who was secretary of state for FDR?")
+#print find_answer("When did lincoln die?")
+#print find_answer("Where was lincoln shot?")
+print find_answer("Where does Obama live?")
