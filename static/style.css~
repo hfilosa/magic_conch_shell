@@ -95,7 +95,7 @@ body {
 
 #nav {
   padding-top: 372px;
-  background: url(images/header.png) center no-repeat;
+  background: url(images/header.gif) center no-repeat;
 }
 #nav ul {
   margin: 0;
