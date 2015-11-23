@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Dog care template</title>
+  <title>THE MAGIC CONCH SHELL</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" />
 </head>
@@ -14,11 +14,10 @@
   <div id="content">
     <div class="left-col">
       <div id="welcome">
-        <h2>Welcome</h2>
         {% if first %}
-    <h1>IT KNOWS ALL!!!</h1>
-    <br>
-    <h2>What is it you wish to know?</h2>
+	<h1>IT KNOWS ALL!!!</h1>
+	<br>
+	  <h2>What is it you wish to know?</h2>
     
     {% else %}
     <h1>THE CONCH Says   {{answer}}   is the answer to "{{question}}"</h1>
@@ -28,7 +27,7 @@
     
     <form action="/question" method="get">
       <input type="text" name="question">
-      <input type="submit" name="Ask" value="Submit">
+      <input type="submit" name="Ask" value="Ask">
     </form>
       </div>
     </div>
